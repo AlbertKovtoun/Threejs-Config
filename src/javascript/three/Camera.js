@@ -1,12 +1,9 @@
-import * as THREE from "three"
+import * as THREE from "three/webgpu"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { canvas, scene, sizes } from "./Experience"
 
 export class Camera {
   constructor() {
-    this.camera
-    this.controls
-
     this.setCamera()
     this.setCameraControls()
   }
@@ -16,7 +13,7 @@ export class Camera {
       45,
       sizes.width / sizes.height,
       0.1,
-      100
+      100,
     )
     this.camera.position.z = 4
     scene.add(this.camera)
